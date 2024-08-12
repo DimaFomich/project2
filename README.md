@@ -39,3 +39,34 @@ datalist = [
 
 filtered = filterbystate(datalist)
 sorteddata = sortbydate(datalist)
+
+## Тесты для функций
+1. test_mask_account_card_account: Проверяет, что функция mask_account_card возвращает правильную маску для счета.
+2. test_mask_account_card_card: Проверяет, что функция mask_account_card правильно обрабатывает информацию о карте.
+3. test_mask_account_card_unknown_type: Убедитесь, что функция вызывает исключение 
+при передаче неизвестного типа информации.
+4. test_get_date: Проверяет правильное форматирование даты.
+5. test_get_date_invalid_format: Убедитесь, что функция вызывает исключение при передаче неправильного формата даты.
+6. test_get_mask_card_number: Проверяет, что функция get_mask_card_number 
+возвращает правильную маску для полного номера карты.
+7. test_get_mask_account: Проверяет, что функция get_mask_account возвращает последние 4 цифры номера счета.
+8. test_get_mask_card_number_short: Проверяет корректность обработки короткого номера карты.
+9. test_get_mask_account_short: Проверяет корректность обработки короткого номера счета.
+10. test_filter_by_state: Тестирует фильтрацию по состоянию EXECUTED.
+11. test_filter_by_state_default: Тестирует фильтрацию по умолчанию.
+12. test_filter_by_state_no_matches: Проверяет, что возвращается пустой список, если нет совпадений.
+13. 1test_sort_by_date: Проверяет, правильно ли сортируется список по дате в порядке убывания.
+14. test_sort_by_date_descending: Проверяет, правильно ли сортируется список по дате в порядке возрастания.
+
+### Пояснения:
+1. Фикстура sample_data: Создаёт тестовые данные, которые будут 
+использоваться в тестах. Она возвращает список словарей,
+представляющих различные транзакции с полями id, state и date.
+
+### Запуск тестов
+pytest test_masks.py
+pytest test_masks_and_date.py
+pytest <your_test_file_name.py>
+
+
+
